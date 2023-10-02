@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from 'axios'
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
+
 
 export function Registrarse() {
      //hooks
@@ -8,6 +9,8 @@ export function Registrarse() {
      const[email, setEmail]=useState('')
      const[apellido, setApellido]=useState('')
      const[contraseña, setContraseña]=useState('')
+
+     const navigate = useNavigate();
  
      function agregarUsuario(){
          var usuario = {
@@ -18,10 +21,11 @@ export function Registrarse() {
          }
          console.log(usuario)
  
-         axios.post('/api/adduser',usuario)
+         axios.post('/adduser',usuario)
  
          .then(res=>{
-             alert(res.data)
+            alert(res.data) 
+            navigate('/');
          })
  
          .catch(err =>{console.log(err)})

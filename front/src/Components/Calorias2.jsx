@@ -1,13 +1,8 @@
 import React , {useState} from 'react';
-import { useParams}  from 'react-router-dom'
 
 export function Objetivo2() {
-  const params = useParams()
 
   const[edad, setEdad]=useState('')
-  const[sexo, setSexo]=useState('')
-  const[peso, setPeso]=useState('')
-  const[altura, setAltura]=useState('')
   const[gender, setGender]=useState('')
 
   const handleGenderChange = (event) => {

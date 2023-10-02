@@ -1,66 +1,60 @@
-import React, {useState} from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link , useNavigate} from "react-router-dom";
 import axios from 'axios'
-import Calorias1 from "./Calorias1";
-
 
 export function Login() {
 
-    const[nombre, setNombre]=useState('')
-    const[email, setEmail]=useState('')
-    const[apellido, setApellido]=useState('')
-    const[contraseña, setContraseña]=useState('')
+    const [email, setEmail] = useState('')
+    const [contraseña, setContraseña] = useState('')
     const [error, setError] = useState("");
-    const [login, setLogin] = useState(false);
-    
 
-    function Login(){
-        var usuario = {
-            nombre : nombre,
+    const navigate = useNavigate();
+
+    function Login() {
+        const data = {
             email: email,
-            apellido: apellido,
             contraseña: contraseña
         }
-        axios.post('/api/login', usuario ).then(res =>{
-            console.log(res.data);
-            setLogin(true)
-        }).catch(err => {
+        axios.post('/login', data).then(res => {
+            if (res.data === "ok") {
+                console.log(res);
+                navigate('/calorias1')
+            }else{
+                setError('Ocurrió un Error')
+            }
+        }).catch(() => {
             setError('Ocurrió un Error')
         })
     }
 
-    
+
 
     return (
         <div>
-            {login ? (
-            <Calorias1 />
-            ) : (
+            <section className="form-Register">
 
-        <section className="form-Register">
+                <div className="container-logo">
+                    <img className="logo" src="img/HealthyNutritionSinBackground.png" alt="logo" />
+                </div>
 
-            <div className="container-logo">
-                <img className="logo" src="img/HealthyNutritionSinBackground.png" alt="logo" />
-            </div>
+                <h4>Iniciar sesión</h4>
 
-            <h4>Iniciar sesión</h4>
+                <div className="container-input">
+                    <img src="/img/correo-electronico.png" alt="Correo Electrónico" />
 
-            <div className="container-input">
-                <img src="/img/correo-electronico.png" alt="Correo Electrónico" />
+                    <input className="controls" type="email" value={email} onChange={(e)=>{setEmail(e.target.value)}} valueplaceholder="Ingrese su correo" />
+                </div>
 
-                <input className="controls" type="email" valueplaceholder="Ingrese su correo" />
-            </div>
+                <div className="container-input">
+                    <img src="img/bloqueado.png" alt="password" />
+                    <input className="controls" type="password"value={contraseña} onChange={(e)=>{setContraseña(e.target.value)}} placeholder="Ingrese una contraseña" />
+                </div>
 
-            <div className="container-input">
-                <img src="img/bloqueado.png" alt="password" />
-                <input className="controls" type="password" placeholder="Ingrese una contraseña" />
-            </div>
-
-            <input className="buttons" onClick={Login} type="submit" value="Iniciar sesión" />
-            <p>{error}</p>
-            <p>¿Aún no eres miembro? <Link to="/registrarse">Registrate</Link></p>
-        </section>)}     
-    </div>
+                <input className="buttons" onClick={Login} type="submit" value="Iniciar sesión" />
+                <p>{error}</p>
+                <p>¿Aún no eres miembro? <Link to="/registrarse">Registrate</Link></p>
+            </section>
+        </div>
     );
 }
 export default Login

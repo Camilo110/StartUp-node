@@ -1,20 +1,17 @@
 const express = require('express')
 const app = express()
 
-const conexionBD = require("./conexion")
+const conexionBD = require("./database/conexion")
+const controllers = require('./controllers/index')
 
-const rutas = require('./rutas')
+app.use(express.json())
+app.use(express.urlencoded({extended: 'true'}))
 
-const bodyParser = require('body-parser')
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: 'true'}))
+app.listen(5000, function(){  console.log("servidor OK")})
 
-app.use('/api', rutas)
 
-app.get('/', (req,res)=>{
-    res.end("esto es un get de la api")
-})
+app.get('/', (req,res)=>{res.end("esto es un get de la api")})
 
-app.listen(5000, function(){
-    console.log("servidor OK")
-})
+app.post('/login', controllers.login);
+app.post('/adduser', controllers.register);
+app.get('/buscar/:userId', controllers.getUserById)
