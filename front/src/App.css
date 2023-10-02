@@ -1,38 +1,383 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.form-Register {
+width: 90%;
+max-width: 400px;
+background:#88DC65 ;
+padding: 50px;
+margin: auto;
+margin-top: 100px;
+border-radius: 4px;
+font-family: 'calibri';
+color: white;
+box-shadow: 7px 13px 37px #000;
+}
+
+.form-Register h4 {
+  font-size: 22px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.controls {
+  width: 100%;
+  background: #88DC65;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid white;
+  font-size: 18px;
+  padding-left: 45px;
+  color: #027017;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.controls:focus {
+  border-color: #027017;
+  outline: unset;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.controls::placeholder {
+  color: white;
+}
+
+.form-Register p {
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.form-Register a {
+  color: black;
+  text-decoration: none;
+}
+
+.form-Register a:hover {
+  color: #027017;
+  text-decoration: underline;
+}
+
+.form-Register .buttons, .container-buttons .button {
+  width: 100%;
+  background: #02BA26;
+  border: 2px;
+  padding: 12px;
+  color: white;
+  margin: 16px 0;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: .3s ease;
+}
+
+.form-Register .buttons:hover, .container-buttons .button:hover {
+  background-color: #027017;
+}
+
+.container-input {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.container-input img {
+  position: absolute;
+  width: 30px;
+  left: 5px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.objetivos {
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 15px;
+  margin-top: 25px;
+}
+
+.container-buttons {
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  column-gap: 15px;
+}
+
+.container-buttons .button {
+  box-shadow: 7px 13px 20px #000;
+}
+
+.container-buttons img{
+  width:50px;
+}
+
+h1 {
+  font-family: sans-serif;
+}
+
+.nav-botones .boton {
+  width: 100%;
+}
+
+/* INICIO CAMILO*/
+
+.nav-ppal{
+  background-color: #88DC65;
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+}
+.nav-ppal h3, a{
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+.nav-botones{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap:5px
+}
+.sec-ppal{
+  margin-top: 20px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.sec-ppal img{
+  margin: 5px;
+}
+.sec-ppal div{
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: start;
+}
+.boton{
+  background-color: #8a7f7f9e;
+  color: #fff;
+  padding: 5px 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 3px;
+  text-align: center;
+  border: none;
 }
 
-.App-link {
-  color: #61dafb;
+.form-Calorias{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.form-Calorias h1{
+  margin: 20px;
+}
+.form-div{
+  display: flex;
+  justify-content: flex-end;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/*FIN CAMILO*/
+/* _____________________________________________________________________________________ */
+
+
+/* LOGIN PETUS */
+
+.container-logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo{
+  height: 200px;
+  width: 150px;  
+}
+
+/* LOGIN FIN */
+
+/* _________________________________________________________________________________________ */
+
+/* TABLA DE ALIMENTOS PETUS */
+.muchoTonto {
+  display: flex;
+  align-items: center;
+  min-height: 100vh; 
+  margin: 0;
+  flex-direction: column;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #88DC65;
+  padding: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 80px;
+  width: 100%;
+}
+
+.logo img {
+  width: 65px; 
+  height: auto; 
+  margin-top: 60px;
+  margin-left: 10px;
+}
+
+.buttons {
+  display: flex;
+}
+
+.button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.content {
+  padding-top: 60px;
+}
+
+.image-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.image {
+  margin: 10px;
+  position: relative;
+  transition: transform 0.3s;
+  flex: 0 0 calc(20% - 20px);
+  box-sizing: border-box;
+
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.image:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .image {
+      flex: 0 0 calc(50% - 20px);
+      max-width: calc(50% - 20px);
+      transform: none;
   }
 }
+
+.button-nav {
+  background-color: #02BA26;
+  color: #fff;
+  border: none;
+  padding: 10px 20px; 
+  margin-left: 10px;
+  cursor: pointer;
+  border-radius: 10px; 
+  transition: background-color 0.3s; 
+}
+
+.button-nav:hover {
+  background-color: #027017; 
+}
+
+/* TABLA DE ALIMENTOS FIN*/
+.calc-Calorias{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+}
+.calc-Calorias p{
+  margin: 20px;
+
+}
+.calc-Calorias h1{
+text-align: center;
+
+}
+.container-cal {
+  position: relative;
+  margin-bottom: 16px;
+  padding-left: 40px;
+}
+
+.container-cal img {
+  position: absolute;
+  width: 30px;
+  left: 5px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.container-cal a{
+font-weight: unset;
+color:#02BA26;
+text-decoration: underline;
+}
+.container-cal a:hover{
+color:#027017;
+}
+.container-motiv{
+  padding: 0 15px;
+
+}
+.container-motiv img{
+  width: 100%;
+}
+/* Estilo de la pagina de inicio PETUS */
+header{
+  background-color: dark;
+}
+
+
+.nosotros{
+  text-align: justify;
+  line-height: 3em;
+}
+.text-custom{
+  color: whitesmoke;
+}
+
+.text-custom2{
+  color: #88DC65;
+}
+.bg-custom{
+  background-color:  #88DC65;
+}
+.bg-custom1{
+  background-color: #88DC65;
+}
+
+a img {
+  width: 40px;
+  height: 60px;
+  margin-right: 20px;
+}
+
+.btn-oval {
+  border-radius: 50px;
+}
+/* https://img.freepik.com/foto-gratis/desayuno-tortilla-rabano-rucula-verde-sandwich-salmon-plato-blanco-frittata-tortilla-italiana-vista-superior_2829-20069.jpg?w=1380&t=st=1696126894~exp=1696127494~hmac=b0dad1c3fc140bd150c541471f03d9a84ca9d52fe867f6451bc8edbb1e1775db */
