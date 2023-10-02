@@ -6,7 +6,7 @@ export function Login() {
         <section className="form-Register">
         
             <div className="container-logo">
-                <img className="logo" src="img/HealthyNutritionSinBackground.png" alt="" />
+                <img className="logo" src="img/HealthyNutritionSinBackground.png" alt="logo" />
             </div>
 
             <h4>Iniciar sesión</h4>
