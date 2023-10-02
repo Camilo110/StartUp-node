@@ -1,17 +1,10 @@
 const express = require('express')
 const router = express.Router()
 
-const mongoose = require('mongoose')
-const eschema = mongoose.Schema
+const controllers = require('./controllers')
 
-const eschemaUsuario = new eschema({
-    nombre: String,
-    email: String,
-    apellido: String,
-    contraseña: String
-})
+const modeloUsuario  = require("./model/usuario");
 
-const modeloUsuario = mongoose.model('usuariosLog', eschemaUsuario)
 module.exports = router
 
 router.post('/login',async (req, res) => {
@@ -45,3 +38,5 @@ router.post('/login',async (req, res) => {
             res.status(500).send(err);
         });
   });
+
+router.get('/buscar/:userId', controllers.getUserById)
