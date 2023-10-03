@@ -16,8 +16,8 @@ function App() {
       <Header/>
       <BrowserRouter>
         <Routes>
-          <Route path='' element={<Index />} exact> </Route>
-          <Route path='login' element={<Login />}></Route>
+          <Route path='home' element={<Index />} exact> </Route>
+          <Route path='' element={<Login />}></Route>
           <Route path='registrarse' element={<Registrarse />}></Route>
           <Route path='calorias1' element={<Calorias1 />}></Route>
           <Route path='calorias2/:id' element={<Calorias2 />}></Route>
