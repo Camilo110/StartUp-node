@@ -11,7 +11,7 @@ max-width: 400px;
 background:#88DC65 ;
 padding: 50px;
 margin: auto;
-margin-top: 100px;
+margin-top: 25px;
 border-radius: 4px;
 font-family: 'calibri';
 color: white;
@@ -20,7 +20,6 @@ box-shadow: 7px 13px 37px #000;
 
 .form-Register h4 {
   font-size: 22px;
-  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -45,9 +44,13 @@ box-shadow: 7px 13px 37px #000;
 }
 
 .form-Register p {
-  height: 40px;
+  
+  height: 15px;
   text-align: center;
   font-size: 18px;
+}
+.form-Register .error {
+  color: red;
 }
 
 .form-Register a {
@@ -66,7 +69,6 @@ box-shadow: 7px 13px 37px #000;
   border: 2px;
   padding: 12px;
   color: white;
-  margin: 16px 0;
   font-size: 16px;
   cursor: pointer;
   border-radius: 10px;
@@ -202,16 +204,22 @@ h1 {
 }
 
 .logo{
-  height: 200px;
+  height: 180px;
   width: 150px;  
 }
-
+.navbarr{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  
+}
 /* LOGIN FIN */
 
 /* _________________________________________________________________________________________ */
 
 /* TABLA DE ALIMENTOS PETUS */
-.muchoTonto {
+.Petus {
   display: flex;
   align-items: center;
   min-height: 100vh; 
@@ -234,7 +242,7 @@ h1 {
 }
 
 .logo img {
-  width: 65px; 
+  width: 90%; 
   height: auto; 
   margin-top: 60px;
   margin-left: 10px;
@@ -258,8 +266,11 @@ h1 {
 }
 
 .image-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
 }
 
 .image {
@@ -283,7 +294,7 @@ h1 {
 @media (max-width: 768px) {
   .image {
       flex: 0 0 calc(50% - 20px);
-      max-width: calc(50% - 20px);
+      max-width: calc(80%);
       transform: none;
   }
 }

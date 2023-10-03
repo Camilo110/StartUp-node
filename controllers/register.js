@@ -5,7 +5,10 @@ const modeloUsuario = require('../model/usuario')
 const register = async (req, res) => {
     const { nombre, email, apellido, contraseña } = req.body;
 
-    const existingUser = await modeloUsuario.findOne({ email });
+    // Convertir el email a minúsculas
+    const formattedEmail = email.toLowerCase();
+
+    const existingUser = await modeloUsuario.findOne({ formattedEmail });
     if (existingUser) {
         return res.status(400).json({ message: 'El usuario ya existe' });
     }
@@ -17,8 +20,7 @@ const register = async (req, res) => {
      const formattedFirstname = nombre.charAt(0).toUpperCase() + nombre.slice(1).toLowerCase();
      const formattedLastname = apellido.charAt(0).toUpperCase() + apellido.slice(1).toLowerCase();
  
-     // Convertir el email a minúsculas
-     const formattedEmail = email.toLowerCase();
+     
  
      const nuevoUsuario = new modeloUsuario({
          nombre:formattedFirstname,

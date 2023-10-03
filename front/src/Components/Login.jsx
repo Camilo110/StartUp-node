@@ -12,15 +12,15 @@ export function Login() {
 
     function Login() {
         const data = {
-            email: email,
+            email: email.toLowerCase(),
             contraseña: contraseña
         }
         axios.post('/login', data).then(res => {
             if (res.data === "ok") {
-                console.log(res);
+                console.log(res.data);
                 navigate('/calorias1')
             }else{
-                setError('Ocurrió un Error')
+                setError(res.data)
             }
         }).catch(() => {
             setError('Ocurrió un Error')
@@ -51,7 +51,7 @@ export function Login() {
                 </div>
 
                 <input className="buttons" onClick={Login} type="submit" value="Iniciar sesión" />
-                <p>{error}</p>
+                <p className="error">{error}</p>
                 <p>¿Aún no eres miembro? <Link to="/registrarse">Registrate</Link></p>
             </section>
         </div>

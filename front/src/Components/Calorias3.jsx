@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-const Calorias3 = () => {
+function Calorias3(){
   return (
     <div>
       <div className="calc-Calorias">

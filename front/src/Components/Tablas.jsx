@@ -3,16 +3,6 @@ import React from 'react';
 export function Tablas() {
   return (
     <div className="Petus">
-      <nav className="navbar">
-        <div className="logo">
-          <img src="img/HealthyNutritionSinBackground.png" alt="Logo" />
-        </div>
-        <div className="buttons-nav">
-          <button className="button-nav">Regresar</button>
-          <button className="button-nav">Salir</button>
-          <a href="registro.html">Registro</a>
-        </div>
-      </nav>
 
       <div className="image-container">
         <div className="image">

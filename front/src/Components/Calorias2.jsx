@@ -1,24 +1,44 @@
-import React , {useState} from 'react';
+import React, { useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom'
+
+
 
 export function Objetivo2() {
+  const params = useParams()
 
-  const[edad, setEdad]=useState('')
-  const[gender, setGender]=useState('')
+  const [edad, setEdad] = useState('')
+  const [gender, setGender] = useState('')
+  const { peso, setPeso } = useState('')
+  const { altura, setAltura } = useState('')
+
+  const navigate = useNavigate();
+
 
   const handleGenderChange = (event) => {
+    console.log(params.id)
     setGender(event.target.value);
-  console.log(gender)}
+  }
+
+  const obtenerCampos = () => {
+    const datos = {
+      edad: edad,
+      genero: gender,
+      peso: peso,
+      altura: altura
+    }
+    navigate('/calorias3')
+  }
 
   return (
     <div className="form-Calorias">
       <section>
-        <h1>Calcular Calorias</h1>
+        <h1>Calcular Calorias </h1>
         <div className="container-camilo">
-          <img src="img/usuario.png" alt="Icon" />
-          <input className="controls" type="text" value={edad} onChange={(e)=>{setEdad(e.target.value)}} placeholder="Ingrese su edad" />
+          <img src="img/user.png" alt="Ícono de Usuario" />
+          <input className="controls" type="text" value={edad} onChange={(e) => { setEdad(e.target.value) }} placeholder="Ingrese su edad" />
         </div>
         <div className="container-camilo">
-          <img src="img/usuario.png" alt="Icon" />
+          <img src="img/user.png" alt="Ícono de Usuario" />
           <h3>Sexo</h3>
           <div className="gender-selector">
             <select value={gender} onChange={handleGenderChange}>
@@ -29,15 +49,15 @@ export function Objetivo2() {
           </div>
         </div>
         <div className="container-camilo">
-          <img src="img/correo-electronico.png" alt="Icon" />
-          <input className="controls" type="email" name="Correo" id="correo" placeholder="Ingrese su correo" />
+          <img src="img/user.png" alt="Ícono de Usuario" />
+          <input className="controls" type="text" value={altura} onChange={(e) => { setAltura(e.target.value) }} placeholder="Ingrese su edad" />
         </div>
         <div className="container-camilo">
-          <img src="img/bloqueado.png" alt="Icon" />
-          <input className="controls" type="password" name="Contraseña" id="contraseña" placeholder="Ingrese una contraseña" />
+          <img src="img/user.png" alt="Ícono de Usuario" />
+          <input className="controls" type="text" value={peso} onChange={(e) => { setPeso(e.target.value) }} placeholder="Ingrese su edad" />
         </div>
         <div className="form-div">
-          <input className="buttons" type="submit" value="Siguiente" />
+          <button className="buttons" onClick={obtenerCampos}>Siguiente</button>
         </div>
       </section>
     </div>
