@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
-export default  function FormularioDatos({propData , res}) {
+export default  function FormularioDatos({propData}) {
   const [edad, setEdad] = useState(0);
   const [sexo, setSexo] = useState("indefinido");
   const [peso, setPeso] = useState(0);
@@ -10,7 +10,6 @@ export default  function FormularioDatos({propData , res}) {
   const navigate = useNavigate()
 
   const handleSiguienteClick = () => {
-    console.log(res)
     propData({
       sexo: sexo,
       edad: edad,
@@ -23,7 +22,7 @@ export default  function FormularioDatos({propData , res}) {
 
   return (
     <div className="formulario">
-      <h1>Ingrese sus datos {res}</h1>
+      <h1>Ingrese sus datos</h1>
       <form>
         <div className="campo">
           <label htmlFor="edad">Edad:</label>

@@ -18,10 +18,10 @@ function App() {
     altura: 0,
     peso: 0
   });
-  const [res2, setRes] = useState();
+  const [res1, setRes1] = useState();
 
   const selectRes = (res) => {
-    setRes(res);
+    setRes1(res);
   };
 
   const selectData = (data) => {
@@ -42,7 +42,7 @@ function App() {
           <Route path='registrarse' element={<Registrarse />}></Route>
           <Route path='calorias1' element={<Calorias1 propRes={selectRes} />}></Route>
           <Route path='calorias2/' element={<Calorias2 propData={selectData} />}></Route>
-          <Route path='calorias3/' element={<Calorias3 data={data}/>}></Route>
+          <Route path='calorias3/' element={<Calorias3 data={data} resOne={res1}/>}></Route>
           <Route path='tablas' element={<Tablas />} exact></Route>
         </Routes>
       </BrowserRouter>

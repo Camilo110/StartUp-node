@@ -4,16 +4,21 @@ import { Link } from 'react-router-dom';
 function Calorias3(props) {
   // Acceder a los datos pasados desde el segundo componente
   const datos = props.data;
+  const GastoEnergetico = props.resOne;
 
   // Realizar cálculos basados en los datos recibidos (por ejemplo, calcular calorías y IMC)
   const calcularCaloriasDiarias = () => {
-    return datos.altura
-  };
-
+    console.log(datos , GastoEnergetico)
+    const calorias =(66.47+13.75*datos.peso+5*datos.altura-6.74*datos.edad) * GastoEnergetico;
+    return calorias.toFixed(2);
+  }
   const calcularIMC = () => {
-    console.log(typeof datos)
-    return datos.peso
+    const alturaMetros = datos.altura / 100;
+    // La fórmula corregida debe ser:
+    const imc = datos.peso / (alturaMetros * alturaMetros);
+    return imc.toFixed(2);
   };
+  
 
   // Llamar a las funciones para calcular calorías e IMC
   const caloriasDiarias = calcularCaloriasDiarias();
