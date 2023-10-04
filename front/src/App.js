@@ -1,4 +1,5 @@
 import './App.css';
+import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './Components/Nav';
 import Index from './Components/Index';
@@ -11,17 +12,37 @@ import Tablas from './Components/Tablas';
 
 
 function App() {
+  const [data, setData] = useState({
+    sexo: "indefinido",
+    edad: 0,
+    altura: 0,
+    peso: 0
+  });
+  const [res2, setRes] = useState();
+
+  const selectRes = (res) => {
+    setRes(res);
+  };
+
+  const selectData = (data) => {
+    setData({
+      sexo: data.sexo,
+      edad: data.edad,
+      altura: data.altura,
+      peso: data.peso
+    });
+  };
   return (
     <div>
-      <Header/>
+      <Header />
       <BrowserRouter>
         <Routes>
           <Route path='home' element={<Index />} exact> </Route>
           <Route path='' element={<Login />}></Route>
           <Route path='registrarse' element={<Registrarse />}></Route>
-          <Route path='calorias1' element={<Calorias1 />}></Route>
-          <Route path='calorias2/:id' element={<Calorias2 />}></Route>
-          <Route path='calorias3/' element={<Calorias3 />}></Route>
+          <Route path='calorias1' element={<Calorias1 propRes={selectRes} />}></Route>
+          <Route path='calorias2/' element={<Calorias2 propData={selectData} />}></Route>
+          <Route path='calorias3/' element={<Calorias3 data={data}/>}></Route>
           <Route path='tablas' element={<Tablas />} exact></Route>
         </Routes>
       </BrowserRouter>

@@ -391,4 +391,61 @@ a img {
 .btn-oval {
   border-radius: 50px;
 }
-/* https://img.freepik.com/foto-gratis/desayuno-tortilla-rabano-rucula-verde-sandwich-salmon-plato-blanco-frittata-tortilla-italiana-vista-superior_2829-20069.jpg?w=1380&t=st=1696126894~exp=1696127494~hmac=b0dad1c3fc140bd150c541471f03d9a84ca9d52fe867f6451bc8edbb1e1775db */
+
+.formulario {
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #72c552;
+  border-radius: 30px;
+  margin-top: 25px;
+  border-radius: 4px;
+  font-family: 'calibri';
+  box-shadow: 7px 13px 37px #000;
+}
+
+.formulario h1 {
+  text-align: center;
+  font-size: 24px;
+}
+
+.campo {
+  margin-bottom: 15px;
+}
+
+.formulario label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.formulario input, .formulario select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.boton-siguiente {
+  display: block;
+  width: 100%x;
+  padding: 10px;
+  background-color: #177329;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.boton-inicio{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.boton-siguiente:hover {
+  background-color: #0a3513;
+}

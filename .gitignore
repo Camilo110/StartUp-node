@@ -1,0 +1,9 @@
+
+front/node_modules/
+front/node_modules/.cache/
+front/node_modules/.cache/.eslintcache
+front/node_modules/.cache/.eslintcache
+front/node_modules/.cache/.eslintcache
+*.old
+*.pack
+node_modules/

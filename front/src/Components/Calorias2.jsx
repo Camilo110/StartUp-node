@@ -1,67 +1,72 @@
 import React, { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
+export default  function FormularioDatos({propData , res}) {
+  const [edad, setEdad] = useState(0);
+  const [sexo, setSexo] = useState("indefinido");
+  const [peso, setPeso] = useState(0);
+  const [altura, setAltura] = useState(0);
+  
+  const navigate = useNavigate()
 
-
-export function Objetivo2() {
-  const params = useParams()
-
-  const [edad, setEdad] = useState('')
-  const [gender, setGender] = useState('')
-  const { peso, setPeso } = useState('')
-  const { altura, setAltura } = useState('')
-
-  const navigate = useNavigate();
-
-
-  const handleGenderChange = (event) => {
-    console.log(params.id)
-    setGender(event.target.value);
-  }
-
-  const obtenerCampos = () => {
-    const datos = {
+  const handleSiguienteClick = () => {
+    console.log(res)
+    propData({
+      sexo: sexo,
       edad: edad,
-      genero: gender,
-      peso: peso,
-      altura: altura
-    }
+      altura: altura,
+      peso:peso
+    })
     navigate('/calorias3')
+
   }
 
   return (
-    <div className="form-Calorias">
-      <section>
-        <h1>Calcular Calorias </h1>
-        <div className="container-camilo">
-          <img src="img/user.png" alt="Ícono de Usuario" />
-          <input className="controls" type="text" value={edad} onChange={(e) => { setEdad(e.target.value) }} placeholder="Ingrese su edad" />
+    <div className="formulario">
+      <h1>Ingrese sus datos {res}</h1>
+      <form>
+        <div className="campo">
+          <label htmlFor="edad">Edad:</label>
+          <input
+            type="number"
+            id="edad"
+            value={edad}
+            onChange={(e) => setEdad(e.target.value)}
+          />
         </div>
-        <div className="container-camilo">
-          <img src="img/user.png" alt="Ícono de Usuario" />
-          <h3>Sexo</h3>
-          <div className="gender-selector">
-            <select value={gender} onChange={handleGenderChange}>
-              <option value="indefinido">Indefinido</option>
-              <option value="hombre">Hombre</option>
-              <option value="mujer">Mujer</option>
-            </select>
-          </div>
+        <div className="campo">
+          <label>Sexo:</label>
+          <select
+            value={sexo}
+            onChange={(e) => setSexo(e.target.value)}
+          >
+            <option value="indefinido">Indefinido</option>
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+          </select>
         </div>
-        <div className="container-camilo">
-          <img src="img/user.png" alt="Ícono de Usuario" />
-          <input className="controls" type="text" value={altura} onChange={(e) => { setAltura(e.target.value) }} placeholder="Ingrese su edad" />
+        <div className="campo">
+          <label htmlFor="peso">Peso (kg):</label>
+          <input
+            type="number"
+            id="peso"
+            value={peso}
+            onChange={(e) => setPeso(e.target.value)}
+          />
         </div>
-        <div className="container-camilo">
-          <img src="img/user.png" alt="Ícono de Usuario" />
-          <input className="controls" type="text" value={peso} onChange={(e) => { setPeso(e.target.value) }} placeholder="Ingrese su edad" />
+        <div className="campo">
+          <label htmlFor="altura">Altura (cm):</label>
+          <input
+            type="number"
+            id="altura"
+            value={altura}
+            onChange={(e) => setAltura(e.target.value)}
+          />
         </div>
-        <div className="form-div">
-          <button className="buttons" onClick={obtenerCampos}>Siguiente</button>
-        </div>
-      </section>
+        <button className="boton-siguiente" onClick={handleSiguienteClick}>
+          Siguiente
+        </button>
+      </form>
     </div>
   );
 }
-
-export default Objetivo2;
