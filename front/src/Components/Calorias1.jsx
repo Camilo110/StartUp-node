@@ -46,11 +46,11 @@ export function Objetivos(props) {
     <section className="objetivos">
       <h1 className="mt-5">¿Cuál es su nivel de actividad</h1>
       {activityLevels.map((level, index) => (
-        <div key={index} className="container-buttons">
+        <div key={index} className="container-buttons mt-4">
           {level.image}
           <button
             onClick={() => setData(level.value)}
-            className="button mt-4"
+            className="button"
             type="button"
             title={level.tooltip}
           >
