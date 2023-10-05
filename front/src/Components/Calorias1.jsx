@@ -44,13 +44,13 @@ export function Objetivos(props) {
 
   return (
     <section className="objetivos">
-      <h1>¿Cuál es tu objetivo?</h1>
+      <h1 className="mt-5">¿Cuál es su nivel de actividad</h1>
       {activityLevels.map((level, index) => (
         <div key={index} className="container-buttons">
           {level.image}
           <button
             onClick={() => setData(level.value)}
-            className="button"
+            className="button mt-4"
             type="button"
             title={level.tooltip}
           >
