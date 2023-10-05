@@ -9,31 +9,31 @@ export function Objetivos(props) {
       label: "Muy ligera",
       tooltip: "Actividades sedentarias, sin ejercicio.",
       value: 1.3,
-      image: <img src="img\lipido.png" alt="1" />
+      image: <img src="img\muy-ligera.png" alt="1" />
     },
     {
       label: "Ligera",
       tooltip: "Actividades ligeras, como caminar ocasionalmente.",
       value: 1.5,
-      image: <img src="img\lipido.png" alt="1" />
+      image: <img src="img\ligera.png" alt="1" />
     },
     {
       label: "Moderada",
       tooltip: "Actividades moderadas, como caminar diariamente o hacer ejercicio ligero.",
       value: 1.7,
-      image: <img src="img\lipido.png" alt="1" />
+      image: <img src="img\moderada.png" alt="1" />
     },
     {
       label: "Intensa",
       tooltip: "Ejercicio intenso o entrenamiento regular.",
       value: 2.1,
-      image: <img src="img\lipido.png" alt="1" />
+      image: <img src="img\intensa.png" alt="1" />
     },
     {
       label: "Excepcional",
       tooltip: "Atletas de alto rendimiento.",
       value: 2.4,
-      image: <img src="img\lipido.png" alt="1" />
+      image: <img src="img\muy-intensa.jpg" alt="1" />
     },
   ];
 
@@ -46,11 +46,11 @@ export function Objetivos(props) {
     <section className="objetivos">
       <h1 className="mt-5">¿Cuál es su nivel de actividad</h1>
       {activityLevels.map((level, index) => (
-        <div key={index} className="container-buttons">
+        <div key={index} className="container-buttons mt-3">
           {level.image}
           <button
             onClick={() => setData(level.value)}
-            className="button mt-4"
+            className="button"
             type="button"
             title={level.tooltip}
           >

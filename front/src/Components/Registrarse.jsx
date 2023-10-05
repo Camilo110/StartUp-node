@@ -50,7 +50,9 @@ export function Registrarse() {
         <input className="controls" type="password" value={contraseña} onChange={(e)=>{setContraseña(e.target.value)}} placeholder="Ingrese una contraseña" />
       </div>
 
-      <input onClick={agregarUsuario} className="buttons" type="submit" value="Registrarse" />
+      <button onClick={agregarUsuario} className="buttons">
+        Registrarse
+      </button>
       <p>¿Ya eres miembro? <Link to="/login">Inicia tu sesión</Link></p>
     </section>
   );

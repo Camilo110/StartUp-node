@@ -42,7 +42,7 @@ export function Login() {
                 <div className="container-input">
                     <img src="/img/correo-electronico.png" alt="Correo Electrónico" />
 
-                    <input className="controls" type="email" value={email} onChange={(e)=>{setEmail(e.target.value)}} valueplaceholder="Ingrese su correo" />
+                    <input className="controls" type="email" value={email} onChange={(e)=>{setEmail(e.target.value)}} placeholder="Ingrese su correo" />
                 </div>
 
                 <div className="container-input">

@@ -124,6 +124,13 @@ function Index() {
           </div>
         </div>
       </section>
+      {/* Sección Slide 5 video */}
+      <section className='video-container container'>
+        <h2 className='py-4 text-center container'>Come como la persona que quieras ser</h2>
+        <div className='video-responsive'>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/CyvtS7nPPf8?si=N04Sy_1lUJ8Bdlns" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </section>
     </div>
   );
 }
